@@ -1,0 +1,84 @@
+default_platform(:ios)
+platform :ios do
+  desc "Push a new iOS development build"
+  lane :development do |options|
+    # Setup the keychain and match to work with CI
+    setup_ci()
+    
+    # Increase build timeout to reduce failures on CI
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "6"
+    
+    # Get required certificates and profiles
+    match(app_identifier: "com.izisolution.btmanagement.cicd", type: "adhoc")
+    
+    # Handle input parameters
+    version = options[:version] || "1.0.0" 
+    build_number = options[:build_number] || 1
+    release_notes = options[:release_notes] || "Lots of amazing new features to test out!"
+    groups = options[:groups] ||
+    testers = options[:testers] ||
+    
+    # Update version and build number
+    increment_version_number(version_number: version)
+    increment_build_number(build_number: build_number)
+    
+    # Build iOS app
+    build_app(
+      workspace: "Runner.xcworkspace",
+      scheme: "development",
+      export_method: "ad-hoc",
+    )
+    
+    # Upload to Firebase Distribution
+    # firebase_app_distribution(
+    #   app: "<<APP ID from Firebase app>>",
+    #   service_credentials_file: "fastlane/service-account.json",
+    #   testers: testers,
+    #   groups: groups,
+    #   release_notes: release_notes,
+    # )
+  end
+  desc "Push a new iOS production build"
+  # fastlane production version:"1.0.0" build_number:1 groups:"<<tester_group>>" release_notes:"First release"
+  lane :production do |options|
+    # Setup the keychain and match to work with CI
+    setup_ci()
+    
+    # Handle input parameters
+    release_notes = options[:release_notes] || "Lots of amazing new features to test out!"
+    groups = options[:groups]
+    
+    # Increase build timeout to reduce failures on CI
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "6"
+    
+    # Get required certificates and profiles
+    match(app_identifier: "com.izisolution.btmanagement.cicd", type: "appstore")
+    
+    # Auto-increment build number based on TestFlight
+    updated_version_number = bump_build_number()
+    increment_build_number(build_number: updated_version_number)
+    
+    # Build iOS app
+    build_app(
+      workspace: "Runner.xcworkspace",
+      scheme: "production",
+      export_method: "app-store",
+    )
+    
+    # Upload to TestFlight
+    pilot(
+      api_key_path: "fastlane/store.json", 
+      skip_waiting_for_build_processing: true, 
+      changelog: release_notes,
+      groups: groups,
+    )
+  end
+
+  # Helper function to get the next build number
+  def bump_build_number()
+    latest_build_number = latest_testflight_build_number(initial_build_number: 0)
+    return (latest_build_number + 1)
+  end
+end

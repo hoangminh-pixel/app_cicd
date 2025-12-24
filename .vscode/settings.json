@@ -1,3 +1,4 @@
 {
-  "dart.flutterSdkPath": ".fvm/versions/3.24.3"
+  "dart.flutterSdkPath": ".fvm/versions/3.24.3",
+  "cmake.sourceDirectory": "/Users/izisolution/Documents/Project/bt_management_flutter/linux"
 }

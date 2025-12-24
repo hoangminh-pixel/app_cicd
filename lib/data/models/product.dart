@@ -1,0 +1,391 @@
+class Product {
+  final int id;
+  final String name;
+  final String category;
+  final String code;
+  final double price;
+  final String imageUrl;
+  int stock;
+  final bool isNew;
+
+  Product({
+    required this.id,
+    required this.name,
+    required this.category,
+    required this.code,
+    required this.price,
+    this.imageUrl = "",
+    this.stock = 0,
+    this.isNew = false,
+  });
+}
+
+final List<Product> mockProducts = [
+  // ==== Vàng tích trữ ====
+  Product(
+    id: 1,
+    name: "Nhẫn vàng 9999 BT9999-R01",
+    category: "Vàng tích trữ",
+    code: "BT9999-R01",
+    price: 5200000,
+    stock: 20,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/KGB5C.01.jpg",
+  ),
+  Product(
+    id: 2,
+    name: "Miếng vàng 9999 1 chỉ",
+    category: "Vàng tích trữ",
+    code: "MV9999-1C",
+    price: 7400000,
+    stock: 10,
+    isNew: true,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/43-1706070696.jpg",
+  ),
+  Product(
+    id: 3,
+    name: "Miếng vàng 9999 5 chỉ",
+    category: "Vàng tích trữ",
+    code: "MV9999-5C",
+    price: 36800000,
+    stock: 6,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/43-1706070696.jpg",
+  ),
+
+  // ==== Trang sức phong cách Ý ====
+  Product(
+    id: 4,
+    name: "Dây liền mặt phong cách Ý PYD2V10KDH-302003",
+    category: "Trang sức Phong cách Ý",
+    code: "PYD2V10KDH-302003",
+    price: 3148380,
+    stock: 10,
+    isNew: false,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/PYMAV10KDH-301031.01.jpg",
+  ),
+  Product(
+    id: 5,
+    name: "Lắc tay phong cách Ý LT-Y14K-301",
+    category: "Trang sức Phong cách Ý",
+    code: "LTY14K-301",
+    price: 4850000,
+    stock: 7,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/PYLTV10KDH-212016.01.jpg",
+  ),
+  Product(
+    id: 6,
+    name: "Nhẫn phong cách Ý RN-Y18K-102",
+    category: "Trang sức Phong cách Ý",
+    code: "RNY18K-102",
+    price: 5900000,
+    stock: 5,
+    isNew: true,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/PYN1V10KD0-310001.01.jpg",
+  ),
+
+  // ==== Trang sức Nhập khẩu Hàn Quốc ====
+  Product(
+    id: 7,
+    name: "Dây liền mặt Nhập Khẩu Hàn Quốc 14k NHD2V14CZH-309006",
+    category: "Trang Sức Nhập Khẩu Hàn Quốc",
+    code: "NHD2V14CZH-309006",
+    price: 4655610,
+    stock: 5,
+    isNew: true,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/NHD2V14KDH-309002.01.jpg",
+  ),
+  Product(
+    id: 8,
+    name: "Dây liền mặt Nhập Khẩu Hàn Quốc 14k NHD2V14KDH-309002",
+    category: "Trang Sức Nhập Khẩu Hàn Quốc",
+    code: "NHD2V14KDH-309002",
+    price: 3706334,
+    stock: 7,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/NHD2V14CZH-309006.01.jpg",
+  ),
+  Product(
+    id: 9,
+    name: "Bông Tai Phong Cách Hàn Quốc 14k - 472634",
+    category: "Trang Sức Nhập Khẩu Hàn Quốc",
+    code: "472634",
+    price: 2924000,
+    stock: 12,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/2924000-04-chi-1697443783.jpg",
+  ),
+  Product(
+    id: 10,
+    name: "Bông tai nhập khẩu Hàn Quốc 14k (GX1-7074-LE)",
+    category: "Trang Sức Nhập Khẩu Hàn Quốc",
+    code: "NHBTV14KD0-309001",
+    price: 3100432,
+    stock: 4,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/NHBTV14KD0-309001.01.jpg",
+  ),
+  Product(
+    id: 11,
+    name: "Lắc tay nhập khẩu Hàn Quốc 14k LT14K-310001",
+    category: "Trang Sức Nhập Khẩu Hàn Quốc",
+    code: "LT14K-310001",
+    price: 5280000,
+    stock: 6,
+    isNew: true,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/NHLTV14KDH-309007.01.jpg",
+  ),
+
+  // ==== Trang sức Bạc ====
+  Product(
+    id: 12,
+    name: "Dây chuyền bạc S925 DC925-S01",
+    category: "Trang sức Bạc",
+    code: "DC925-S01",
+    price: 1500000,
+    stock: 15,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/BCD2B92CZH-401004.01.png",
+  ),
+  Product(
+    id: 13,
+    name: "Nhẫn bạc S925 NB925-01",
+    category: "Trang sức Bạc",
+    code: "NB925-01",
+    price: 950000,
+    stock: 20,
+    isNew: true,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/BCN1B92CZH-308005.01.jpg",
+  ),
+  Product(
+    id: 14,
+    name: "Lắc bạc S925 LB925-02",
+    category: "Trang sức Bạc",
+    code: "LB925-02",
+    price: 1200000,
+    stock: 8,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/day-1-1755600391.jpg",
+  ),
+  Product(
+    id: 15,
+    name: "Bông tai bạc S925 BTB925-03",
+    category: "Trang sức Bạc",
+    code: "BTB925-03",
+    price: 800000,
+    stock: 18,
+    imageUrl: "https://lili.vn/wp-content/uploads/2022/03/Bong-tai-bac-nu-dinh-da-CZ-co-4-la-LILI_453329_1-400x400.jpg",
+  ),
+
+  // ==== Trang sức Kim cương ====
+  Product(
+    id: 16,
+    name: "Nhẫn kim cương NKD-2025",
+    category: "Trang sức Kim cương",
+    code: "NKD-2025",
+    price: 25000000,
+    stock: 2,
+    imageUrl: "https://www.tierra.vn/wp-content/uploads/2025/08/DLN2201-3-VT.webp",
+  ),
+  Product(
+    id: 17,
+    name: "Bông tai kim cương BTKC-01",
+    category: "Trang sức Kim cương",
+    code: "BTKC-01",
+    price: 18500000,
+    stock: 3,
+    imageUrl: "https://product.hstatic.net/200000355853/product/rifyj2200941--vang-trang--02_841b639ab8be483db22b07e0f1af557d_large.png",
+  ),
+  Product(
+    id: 18,
+    name: "Dây chuyền kim cương DCKC-02",
+    category: "Trang sức Kim cương",
+    code: "DCKC-02",
+    price: 32000000,
+    stock: 1,
+    isNew: true,
+    imageUrl: "https://locphuc.com.vn/Content/Images/082025/DFH0281ANW.WG01A/DFH0281ANW-WG01A-thumbnail.jpg",
+  ),
+
+  // ==== Thần Tài ====
+  Product(
+    id: 19,
+    name: "Tượng Thần Tài vàng 24k nhỏ",
+    category: "Thần Tài",
+    code: "TT24K-01",
+    price: 8600000,
+    stock: 5,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/untitled-design-3-1737038511.jpg",
+  ),
+  Product(
+    id: 20,
+    name: "Charm Thần Tài vàng 18k",
+    category: "Thần Tài",
+    code: "CTT18K-02",
+    price: 4200000,
+    stock: 9,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/img-7293-111-1736609034.jpg",
+  ),
+  Product(
+    id: 21,
+    name: "Nhẫn Thần Tài vàng 24k",
+    category: "Thần Tài",
+    code: "NTT24K-03",
+    price: 12500000,
+    stock: 3,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/img-7293-111-1736609034.jpg",
+  ),
+
+  // ==== Mặt dây ====
+  Product(
+    id: 22,
+    name: "Mặt dây vàng 18k hình hoa",
+    category: "Mặt dây",
+    code: "MD18K-01",
+    price: 3200000,
+    stock: 7,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/PYMAV10KDH-208005.01.jpg",
+  ),
+  Product(
+    id: 23,
+    name: "Mặt dây bạc S925 hình trái tim",
+    category: "Mặt dây",
+    code: "MD925-02",
+    price: 850000,
+    stock: 14,
+    isNew: true,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/PYMAV10KDH-301031.01.jpg",
+  ),
+  Product(
+    id: 24,
+    name: "Mặt dây kim cương MDKC-03",
+    category: "Mặt dây",
+    code: "MDKC-03",
+    price: 12500000,
+    stock: 2,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/88-1-1741314027.jpg",
+  ),
+
+  // ==== Lắc tay ====
+  Product(
+    id: 25,
+    name: "Lắc tay bạc S925 LT925-01",
+    category: "Lắc tay",
+    code: "LT925-01",
+    price: 1300000,
+    stock: 12,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/day-1-1755600391.jpg",
+  ),
+  Product(
+    id: 26,
+    name: "Lắc tay vàng 18k LT18K-02",
+    category: "Lắc tay",
+    code: "LT18K-02",
+    price: 5400000,
+    stock: 6,
+    isNew: true,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/PYLTV10KDH-212016.01.jpg",
+  ),
+  Product(
+    id: 27,
+    name: "Lắc tay Hàn Quốc 14k LT14K-03",
+    category: "Lắc tay",
+    code: "LT14K-03",
+    price: 4200000,
+    stock: 8,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/271018d637484b3391d57d7451829ebftplv-aphluv4xwc-origin-jpeg-1747964868.jpeg",
+  ),
+
+  // ==== Miếng vàng 24K ====
+  Product(
+    id: 28,
+    name: "Miếng vàng 24K 1 chỉ",
+    category: "Miếng vàng 24K",
+    code: "MV24K-01",
+    price: 7500000,
+    stock: 11,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/untitled-design-1-1737037878.jpg",
+  ),
+  Product(
+    id: 29,
+    name: "Miếng vàng 24K 2 chỉ",
+    category: "Miếng vàng 24K",
+    code: "MV24K-02",
+    price: 15000000,
+    stock: 5,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/untitled-design-3-1737038511.jpg",
+  ),
+  Product(
+    id: 30,
+    name: "Miếng vàng 24K 5 chỉ",
+    category: "Miếng vàng 24K",
+    code: "MV24K-05",
+    price: 37000000,
+    stock: 3,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/128-1736585627.jpg",
+  ),
+
+  // ==== Vòng ====
+  Product(
+    id: 31,
+    name: "Vòng bạc S925 VB925-01",
+    category: "Vòng",
+    code: "VB925-01",
+    price: 1600000,
+    stock: 15,
+    imageUrl: "https://cdn.pnj.io/images/thumbnails/300/300/detailed/266/sp-slztztw060041-lac-tay-bac-dinh-da-style-by-pnj-1.png",
+  ),
+  Product(
+    id: 32,
+    name: "Vòng vàng 18k VV18K-02",
+    category: "Vòng",
+    code: "VV18K-02",
+    price: 6200000,
+    stock: 4,
+    isNew: true,
+    imageUrl: "https://cdn.pnj.io/images/thumbnails/300/300/detailed/262/sp-glqt00y000013-lac-tay-cuoi-vang-24k-dinh-da-aventurine-pnj-la-ngoc-canh-vang-10.png",
+  ),
+  Product(
+    id: 33,
+    name: "Vòng kim cương VKC-03",
+    category: "Vòng",
+    code: "VKC-03",
+    price: 22000000,
+    stock: 2,
+    imageUrl: "https://cdn.pnj.io/images/thumbnails/300/300/detailed/264/sp-gl0000w001620-lac-tay-vang-trang-10k-pnj-hello-kitty-1.png",
+  ),
+
+  // ==== Lắc chân ====
+  Product(
+    id: 34,
+    name: "Lắc chân bạc S925 LCB925-01",
+    category: "Lắc chân",
+    code: "LCB925-01",
+    price: 1200000,
+    stock: 9,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/pylcv10kdh-30300201-1684140896.jpg",
+  ),
+  Product(
+    id: 35,
+    name: "Lắc chân vàng 14k LCV14K-02",
+    category: "Lắc chân",
+    code: "LCV14K-02",
+    price: 3900000,
+    stock: 5,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/phlcv14czh-20500201-1695368518.jpg",
+  ),
+
+  // ==== Bộ Thất Bảo ====
+  Product(
+    id: 36,
+    name: "Bộ Thất Bảo vàng 24k B7B24K-01",
+    category: "Bộ Thất Bảo",
+    code: "B7B24K-01",
+    price: 18500000,
+    stock: 2,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/BCN2B00KD0-305002.01.jpg",
+  ),
+  Product(
+    id: 37,
+    name: "Bộ Thất Bảo vàng 18k B7B18K-02",
+    category: "Bộ Thất Bảo",
+    code: "B7B18K-02",
+    price: 14200000,
+    stock: 3,
+    imageUrl: "https://baotinmanhhai.vn/upload/product/thumb_350x0/BCN2B00KD0-305002.01.jpg",
+  ),
+
+];

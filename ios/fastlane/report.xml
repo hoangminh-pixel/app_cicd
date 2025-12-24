@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000185">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: setup_ci" time="0.000171">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: match" time="5.404371">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: latest_testflight_build_number" time="3.385424">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: increment_build_number" time="0.205714">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="5: build_app" time="99.476728">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="6: pilot" time="209.596224">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
