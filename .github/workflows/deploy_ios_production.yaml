@@ -28,6 +28,11 @@ jobs:
         run: sudo xcodebuild -license accept
       - name: Get Packages
         run: flutter pub get
+      - name: Install CocoaPods
+        working-directory: ios
+        run: |
+          pod repo update
+          pod install
       - name: Setup Fastlane
         uses: ruby/setup-ruby@v1
         with:
