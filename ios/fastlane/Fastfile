@@ -63,7 +63,7 @@ platform :ios do
     # Build iOS app
     build_app(
       workspace: "Runner.xcworkspace",
-      scheme: "production",
+      scheme: "Runner",
       export_method: "app-store",
     )
     
