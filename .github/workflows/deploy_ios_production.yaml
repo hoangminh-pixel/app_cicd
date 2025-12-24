@@ -34,12 +34,18 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: false
           working-directory: ios
-      - name: Setup app store connect
-        run: echo "$APP_STORE_CONNECT_API_KEY" >> ./ios/fastlane/store.json
+
+      - name: Install Ruby gems
+        working-directory: ios
+        run: bundle install
+
       - name: Build and Deploy to TestFlight
+        working-directory: ios
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
         run: |
-          cd ./ios
-          bundle exec fastlane ios production release_notes:"${{ github.event.inputs.release_notes }}" groups:"${{ github.event.inputs.groups }}"
+          bundle exec fastlane ios production \
+            release_notes:"${{ github.event.inputs.release_notes }}" \
+            groups:"${{ github.event.inputs.groups }}"
+
