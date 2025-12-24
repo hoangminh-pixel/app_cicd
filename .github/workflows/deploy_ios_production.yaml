@@ -32,7 +32,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
-          bundler-cache: true
+          bundler-cache: false
           working-directory: ios
       - name: Setup app store connect
         run: echo "$APP_STORE_CONNECT_API_KEY" >> ./ios/fastlane/store.json
