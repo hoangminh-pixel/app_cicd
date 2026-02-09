@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:bt_management_flutter/screens/inventory/inventory_screen.dart';
 import 'package:bt_management_flutter/screens/product/product_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:home_widget/home_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,13 +13,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen>
-    with SingleTickerProviderStateMixin,AutomaticKeepAliveClientMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   TabController? tabController;
+  String appGroupId = 'group.com.izisolution.btmanagement.cicd';
+  String iOSWidgetName = 'MyHomeWidget';
+  String androidWidgetName = 'MyHomeWidget';
+  String dataKey = 'text_from_flutter';
 
   @override
   void initState() {
     tabController = TabController(length: 2, vsync: this);
     super.initState();
+    initHomeWidget();
+  }
+
+  void initHomeWidget() async {
+    final isInit = await HomeWidget.setAppGroupId(appGroupId);
+    log('isInit $isInit');
   }
 
   @override
@@ -30,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen>
             top: true,
             child: TabBar(
               unselectedLabelColor: Colors.black,
-              indicatorColor:Colors.blue,
+              indicatorColor: Colors.blue,
               labelColor: Colors.blue,
               tabs: const [
                 Tab(
@@ -47,17 +60,14 @@ class _HomeScreenState extends State<HomeScreen>
           Expanded(
             child: TabBarView(
               controller: tabController,
-              children: const [
-                ProductScreen(),
-                InventoryScreen()
-              ],
+              children: const [ProductScreen(), InventoryScreen()],
             ),
           ),
         ],
       ),
     );
   }
-  
+
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;

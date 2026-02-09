@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,11 +13,11 @@
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		5DFC9ABF938F8F1447B2639A /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B649D00E6987040E9DFB9BEC /* Pods_RunnerTests.framework */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
+		9451E5002F39A09500ADA98E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B37A552F398BDD00B71234 /* WidgetKit.framework */; };
+		9451E5012F39A09500ADA98E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B37A572F398BDD00B71234 /* SwiftUI.framework */; };
+		9451E50C2F39A09700ADA98E /* MyHomeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9451E4FF2F39A09500ADA98E /* MyHomeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9452DCFC2F3993F40033167A /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3153D2A7F4A46CB85E88C1 /* Pods_Runner.framework */; };
 		9452DCFD2F3993F40033167A /* Pods_Runner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3153D2A7F4A46CB85E88C1 /* Pods_Runner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		94B37A562F398BDD00B71234 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B37A552F398BDD00B71234 /* WidgetKit.framework */; };
-		94B37A582F398BDD00B71234 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B37A572F398BDD00B71234 /* SwiftUI.framework */; };
-		94B37A632F398BDF00B71234 /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 94B37A542F398BDC00B71234 /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
@@ -31,12 +31,12 @@
 			remoteGlobalIDString = 97C146ED1CF9000F007C117D;
 			remoteInfo = Runner;
 		};
-		94B37A612F398BDF00B71234 /* PBXContainerItemProxy */ = {
+		9451E50A2F39A09700ADA98E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 94B37A532F398BDC00B71234;
-			remoteInfo = MyWidgetExtension;
+			remoteGlobalIDString = 9451E4FE2F39A09500ADA98E;
+			remoteInfo = MyHomeWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,7 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				94B37A632F398BDF00B71234 /* MyWidgetExtension.appex in Embed Foundation Extensions */,
+				9451E50C2F39A09700ADA98E /* MyHomeWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,10 +80,10 @@
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		8D7AE88BA5E0DB40B7A1256A /* GoogleService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Runner/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		94311A902F2C4F8400EE3FB7 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		94B37A542F398BDC00B71234 /* MyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9451E4FF2F39A09500ADA98E /* MyHomeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyHomeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9451E5122F39A17900ADA98E /* MyHomeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyHomeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		94B37A552F398BDD00B71234 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		94B37A572F398BDD00B71234 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		94B37A6A2F398CB600B71234 /* MyWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyWidgetExtension.entitlements; sourceTree = "<group>"; };
 		9718FD32E502F17ADE698050 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
@@ -97,17 +97,38 @@
 		DF51BA4F0569D9EC6A987068 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9451E50D2F39A09700ADA98E /* Exceptions for "MyHomeWidget" folder in "MyHomeWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 9451E4FE2F39A09500ADA98E /* MyHomeWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		94B37A592F398BDD00B71234 /* MyWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MyWidget; sourceTree = "<group>"; };
+		9451E5022F39A09500ADA98E /* MyHomeWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9451E50D2F39A09700ADA98E /* Exceptions for "MyHomeWidget" folder in "MyHomeWidgetExtension" target */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = MyHomeWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		94B37A512F398BDC00B71234 /* Frameworks */ = {
+		9451E4FC2F39A09500ADA98E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B37A582F398BDD00B71234 /* SwiftUI.framework in Frameworks */,
-				94B37A562F398BDD00B71234 /* WidgetKit.framework in Frameworks */,
+				9451E5012F39A09500ADA98E /* SwiftUI.framework in Frameworks */,
+				9451E5002F39A09500ADA98E /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,10 +186,10 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
-				94B37A6A2F398CB600B71234 /* MyWidgetExtension.entitlements */,
+				9451E5122F39A17900ADA98E /* MyHomeWidgetExtension.entitlements */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
-				94B37A592F398BDD00B71234 /* MyWidget */,
+				9451E5022F39A09500ADA98E /* MyHomeWidget */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				626AF624A6F190810BF19937 /* Pods */,
@@ -182,7 +203,7 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
-				94B37A542F398BDC00B71234 /* MyWidgetExtension.appex */,
+				9451E4FF2F39A09500ADA98E /* MyHomeWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,24 +257,24 @@
 			productReference = 331C8081294A63A400263BE5 /* RunnerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		94B37A532F398BDC00B71234 /* MyWidgetExtension */ = {
+		9451E4FE2F39A09500ADA98E /* MyHomeWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94B37A692F398BDF00B71234 /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */;
+			buildConfigurationList = 9451E50E2F39A09700ADA98E /* Build configuration list for PBXNativeTarget "MyHomeWidgetExtension" */;
 			buildPhases = (
-				94B37A502F398BDC00B71234 /* Sources */,
-				94B37A512F398BDC00B71234 /* Frameworks */,
-				94B37A522F398BDC00B71234 /* Resources */,
+				9451E4FB2F39A09500ADA98E /* Sources */,
+				9451E4FC2F39A09500ADA98E /* Frameworks */,
+				9451E4FD2F39A09500ADA98E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				94B37A592F398BDD00B71234 /* MyWidget */,
+				9451E5022F39A09500ADA98E /* MyHomeWidget */,
 			);
-			name = MyWidgetExtension;
-			productName = MyWidgetExtension;
-			productReference = 94B37A542F398BDC00B71234 /* MyWidgetExtension.appex */;
+			name = MyHomeWidgetExtension;
+			productName = MyHomeWidgetExtension;
+			productReference = 9451E4FF2F39A09500ADA98E /* MyHomeWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		97C146ED1CF9000F007C117D /* Runner */ = {
@@ -267,14 +288,15 @@
 				97C146EC1CF9000F007C117D /* Resources */,
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				94B37A642F398BDF00B71234 /* Embed Foundation Extensions */,
-				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
-				EA8E4973406BCE4D7BC124D2 /* [CP] Embed Pods Frameworks */,
 				06A7206BACB635647C0820BC /* [CP] Copy Pods Resources */,
+				EA8E4973406BCE4D7BC124D2 /* [CP] Embed Pods Frameworks */,
+				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				94B37A622F398BDF00B71234 /* PBXTargetDependency */,
+				9451E50B2F39A09700ADA98E /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
@@ -296,7 +318,7 @@
 						CreatedOnToolsVersion = 14.0;
 						TestTargetID = 97C146ED1CF9000F007C117D;
 					};
-					94B37A532F398BDC00B71234 = {
+					9451E4FE2F39A09500ADA98E = {
 						CreatedOnToolsVersion = 26.2;
 					};
 					97C146ED1CF9000F007C117D = {
@@ -320,7 +342,7 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 				331C8080294A63A400263BE5 /* RunnerTests */,
-				94B37A532F398BDC00B71234 /* MyWidgetExtension */,
+				9451E4FE2F39A09500ADA98E /* MyHomeWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -333,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94B37A522F398BDC00B71234 /* Resources */ = {
+		9451E4FD2F39A09500ADA98E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,13 +385,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -390,7 +408,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin";
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin\n";
 		};
 		802BA2129E69F0E1C150542A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -449,7 +467,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 		EA8E4973406BCE4D7BC124D2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -459,13 +477,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -483,7 +497,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94B37A502F398BDC00B71234 /* Sources */ = {
+		9451E4FB2F39A09500ADA98E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -507,10 +521,13 @@
 			target = 97C146ED1CF9000F007C117D /* Runner */;
 			targetProxy = 331C8085294A63A400263BE5 /* PBXContainerItemProxy */;
 		};
+		9451E50B2F39A09700ADA98E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9451E4FE2F39A09500ADA98E /* MyHomeWidgetExtension */;
+			targetProxy = 9451E50A2F39A09700ADA98E /* PBXContainerItemProxy */;
+		};
 		94B37A622F398BDF00B71234 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 94B37A532F398BDC00B71234 /* MyWidgetExtension */;
-			targetProxy = 94B37A612F398BDF00B71234 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -663,7 +680,7 @@
 			};
 			name = Profile;
 		};
-		94B37A652F398BDF00B71234 /* Debug */ = {
+		9451E50F2F39A09700ADA98E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -675,7 +692,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = MyWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MyHomeWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -683,10 +700,10 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_FILE = MyHomeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyHomeWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -696,7 +713,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.izisolution.btmanagement.cicd.MyWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.izisolution.btmanagement.cicd.MyHomeWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -710,7 +727,7 @@
 			};
 			name = Debug;
 		};
-		94B37A662F398BDF00B71234 /* Release */ = {
+		9451E5102F39A09700ADA98E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -722,7 +739,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = MyWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MyHomeWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -730,10 +747,10 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_FILE = MyHomeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyHomeWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -742,7 +759,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.izisolution.btmanagement.cicd.MyWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.izisolution.btmanagement.cicd.MyHomeWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -754,7 +771,7 @@
 			};
 			name = Release;
 		};
-		94B37A672F398BDF00B71234 /* Profile */ = {
+		9451E5112F39A09700ADA98E /* Profile */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -766,7 +783,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = MyWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MyHomeWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -774,10 +791,10 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_FILE = MyHomeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyHomeWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -786,7 +803,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.izisolution.btmanagement.cicd.MyWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.izisolution.btmanagement.cicd.MyHomeWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -977,12 +994,12 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94B37A692F398BDF00B71234 /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */ = {
+		9451E50E2F39A09700ADA98E /* Build configuration list for PBXNativeTarget "MyHomeWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94B37A652F398BDF00B71234 /* Debug */,
-				94B37A662F398BDF00B71234 /* Release */,
-				94B37A672F398BDF00B71234 /* Profile */,
+				9451E50F2F39A09700ADA98E /* Debug */,
+				9451E5102F39A09700ADA98E /* Release */,
+				9451E5112F39A09700ADA98E /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
