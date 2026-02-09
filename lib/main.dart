@@ -1,9 +1,31 @@
+import 'dart:async';
+import 'dart:developer';
+
+import 'package:bt_management_flutter/core/configs/di.dart';
+import 'package:bt_management_flutter/core/services/firebase_messaging_service.dart';
+import 'package:bt_management_flutter/core/services/local_notifications_service.dart';
+import 'package:bt_management_flutter/core/services/network_status_service.dart';
 import 'package:bt_management_flutter/data/services/nav_service.dart';
+import 'package:bt_management_flutter/firebase_options.dart';
+import 'package:bt_management_flutter/helpers/toast_helper.dart';
 import 'package:bt_management_flutter/routes/app_routes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await setupDI();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  final localNotificationsService = LocalNotificationsService.instance();
+  await localNotificationsService.init();
+
+  final firebaseMessagingService = FirebaseMessagingService.instance();
+  await firebaseMessagingService.init(localNotificationsService: localNotificationsService);
+
+  await NetworkStatusService().start();
+
   runApp(const MyApp());
 }
 
@@ -16,13 +38,53 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       title: 'BT Management',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.main,
+      initialRoute: AppRoutes.splash,
       routes: AppRoutes.routes,
       navigatorKey: NavigatorService.navigatorKey,
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
+
+class NetworkListener extends StatefulWidget {
+  final Widget child;
+
+  const NetworkListener({super.key, required this.child});
+
+  @override
+  State<NetworkListener> createState() => _NetworkListenerState();
+}
+
+class _NetworkListenerState extends State<NetworkListener> {
+  late final StreamSubscription _sub;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _sub = NetworkStatusService().stream.listen((status) {
+      log('status $status');
+      if (status == NetworkStatus.offline) {
+        log('ofliune');
+        NetworkToast.showOffline();
+      } else {
+        NetworkToast.showOnline();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _sub.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return widget.child;
+  }
+}
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

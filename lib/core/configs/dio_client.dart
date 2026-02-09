@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 
 class DioClient {
@@ -6,9 +9,9 @@ class DioClient {
   DioClient()
       : dio = Dio(
           BaseOptions(
-            baseUrl: "https://api.yourdomain.com/",
-            connectTimeout: const Duration(seconds: 10),
-            receiveTimeout: const Duration(seconds: 10),
+            baseUrl: "https://demo-cmms.izisolution.vn/icmms_webservice/",
+            connectTimeout: const Duration(seconds: 60000),
+            receiveTimeout: const Duration(seconds: 60000),
             headers: {
               "Accept": "application/json",
               'Content-Type': 'application/json'
@@ -22,13 +25,20 @@ class DioClient {
         responseBody: true,
         error: true,
       ),
+      ConnectivityInterceptor(connectivity: Connectivity()),
       InterceptorsWrapper(
         onRequest: (options, handler) async {
+          log("👉 REQUEST: ${options.method} ${options.uri} ${options.data}");
+
           final token = await _getToken();
           if (token != null) {
             options.headers["Authorization"] = "Bearer $token";
           }
           return handler.next(options);
+        },
+        onResponse: (response, handler) {
+          log('data ${response.data}');
+          return handler.next(response);
         },
         onError: (DioException e, handler) async {
           // Nếu token hết hạn (401)
@@ -90,5 +100,24 @@ class DioClient {
       print("Refresh token failed: $e");
       return null;
     }
+  }
+}
+
+
+
+class ConnectivityInterceptor extends Interceptor {
+  final Connectivity _connectivity;
+
+  ConnectivityInterceptor({required Connectivity connectivity})
+      : _connectivity = connectivity;
+
+  @override
+  void onError(DioException err, ErrorInterceptorHandler handler) async {
+    final connectivityResult = await _connectivity.checkConnectivity();
+    if (connectivityResult.contains(ConnectivityResult.none)) {
+      return handler.reject(DioException(
+          requestOptions: err.requestOptions, message: 'No internet connection', type: DioExceptionType.connectionError));
+    }
+    return handler.next(err);
   }
 }

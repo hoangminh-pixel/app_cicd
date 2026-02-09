@@ -4,6 +4,9 @@ class NavigatorService {
   static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   static NavigatorState? get _state => navigatorKey.currentState;
 
+  static BuildContext? get context => navigatorKey.currentContext;
+
+
   static Future<dynamic>? pushNamed(String routeName, {Object? arguments}) {
     return _state?.pushNamed(routeName, arguments: arguments);
   }

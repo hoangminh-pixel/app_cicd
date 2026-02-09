@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "64737087197",
+    "project_id": "pushnoti-1a357",
+    "storage_bucket": "pushnoti-1a357.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64737087197:android:09c5e40d5c559375cb9534",
+        "android_client_info": {
+          "package_name": "com.example.bt_management_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnjytgwim_LT28UK-r3ELrgKIdCas-PfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

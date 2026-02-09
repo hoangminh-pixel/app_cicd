@@ -42,8 +42,17 @@ platform :ios do
   desc "Push a new iOS production build"
   # fastlane production version:"1.0.0" build_number:1 groups:"<<tester_group>>" release_notes:"First release"
   lane :production do |options|
+
+    app_store_connect_api_key(
+      key_id: "G5SS23YM46",
+      issuer_id: "54a2ed13-a7d2-4508-8a1c-d349202b4d53",
+      key_filepath: "./fastlane/AuthKey_G5SS23YM46.p8"
+    )
+
     # Setup the keychain and match to work with CI
     setup_ci()
+
+   
     
     # Handle input parameters
     release_notes = options[:release_notes] || "Lots of amazing new features to test out!"

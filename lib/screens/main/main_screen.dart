@@ -2,6 +2,7 @@ import 'package:bt_management_flutter/screens/cart/cart_screen.dart';
 import 'package:bt_management_flutter/screens/customer/customer_screen.dart';
 import 'package:bt_management_flutter/screens/home/home_screen.dart';
 import 'package:bt_management_flutter/screens/main/bloc/main_bloc.dart';
+import 'package:bt_management_flutter/screens/map/map.dart';
 import 'package:bt_management_flutter/screens/order_list/order_list_screen.dart';
 import 'package:bt_management_flutter/screens/qr_screen/qr_screen.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,8 @@ class _Body extends StatelessWidget {
           CartScreen(),
           OrderListScreen(),
           CustomerScreen(),
-          QrScreen()
+          // QrScreen()
+          MapLauncherDemo()
           // SizedBox.shrink()
           // InventoryScreen()
         ],
